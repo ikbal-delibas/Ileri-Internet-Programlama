@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="isim">İkbal</p>
+    <p class="asd">Osman</p>
+    <p class="asd">Barış</p>
+    <h3 class="asd">Havva Nur</h3>
+    <script>
+        let isim = document.getElementById("isim");
+        isim.innerHTML = "Değişen İkbal";
+        let asds = document.getElementsByClassName("asd");
+        console.log(asds);
+        Array.from(asds).forEach((asd) => {
+            asd.style.color = "red";
+        });
+        let asd_paragraflar = document.querySelectorAll("p.asd");
+        Array.from(asd_paragraflar).forEach((asd_paragraf) => {
+            asd_paragraf.style.textDecoration = "underline";
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="baslik"></h1>
+    <p id="paragraf"></p>
+    <script>
+        kisi = {
+            ad:"",
+            soyad:"",
+            yas:0,
+            
+            yazdir_ad:function(){
+                document.getElementById("baslik").innerHTML = 
+                    this.ad + " " + this.soyad;
+            },
+            yazdir_yas:function(){
+                document.getElementById("paragraf").innerHTML = 
+                    "Yaşınız : " + this.yas;
+            }
+        }
+        kisi.ad = "İkbal";
+        kisi.soyad = "Delibaş";
+        kisi.yas = 22;
+        kisi.yazdir_ad();
+        kisi.yazdir_yas();
+        yeni_kisi = kisi; // yeni bir kisi üretmez
+        yeni_kisi.ad = "Osman Delibaş";
+        console.log("Yeni Kişi adı : " + yeni_kisi.ad);
+        console.log("Eski Kişi adı : " + kisi.ad);
+        console.log("---------------------------------------");
+        var yeni_kisi_2 = {};
+        Object.assign(yeni_kisi_2, kisi);
+        yeni_kisi_2.ad = "123123123";
+        console.log("Yep Yeni Kişi adı : " + yeni_kisi_2.ad);
+        console.log("Eski Kişi adı : " + kisi.ad);
+        console.log("---------------------------------------");
+    </script>
+</body>
+</html>
